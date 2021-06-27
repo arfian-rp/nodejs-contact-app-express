@@ -1,0 +1,33 @@
+<div class="contact mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Daftar contacts</h2>
+
+      <a href="/contact/add" class="btn btn-primary">Tambah</a>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nama</th>
+            <th scope="col">No hp</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% let i = 0 %> <% if (contacts.length < 1) { %> kosong <% } else { %> <% contacts.forEach(e => { %>
+          <tr>
+            <th scope="row"><%= ++i %></th>
+            <td><%= e.nama %></td>
+            <td><%= e.nohp %></td>
+            <td>
+              <a href="/contact/find/<%= e.nama %>/ " class="btn btn-success"><i class="bi bi-info-circle"></i> detail</a>
+              <a href="/contact/remove/<%= e.nama %>/ " class="btn btn-danger"><i class="bi bi-trash"></i></i> delete</a>
+              <a href="/contact/ubah/<%= e.nama %>/" class="btn btn-primary"><i class="bi bi-trash"></i></i> ubah</a>
+            </td>
+          </tr>
+          <% }) %><% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
