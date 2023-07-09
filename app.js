@@ -7,7 +7,7 @@ const contact = require("./utils/contacts");
 app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true })); //untuk app.post
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.render("index", {
